@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>2XCD Design & Production</title>
+
+        <!-- 🔗 External Resources -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+        <link rel="stylesheet" href="style4.css" />
+        <link rel="icon" href="img/logo/2XCD LOGO TS.png" type="image/png" />
+    </head>
+
+    <body>
+        <div class="d-flex flex-column min-vh-100">
+
+            <!-- 🟣 Header -->
+            <nav class="navbar navbar-gradient fixed-top py-3">
+                <div class="container justify-content-center">
+                    <a class="navbar-brand text-light d-flex align-items-center" href="#">
+                        <img src="img/logo/2XCD LOGO TS.png" alt="Logo" class="logo me-2">
+                        <span class="h5 mb-0">2XCD Design & Production</span>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- 🧢 Poster -->
+            <main class="flex-grow-1 mt-5 pt-5">
+                <h2 class="text-center mb-4">Merchandise <b>57Th ORARI</b> Anniversary</h2>
+                <div class="container">
+                    <img src="img/ORARI POSTER.png" alt="Poster Promo" id="posterImage" class="poster-fluid mx-auto d-block mb-4"/>
+                </div>
+
+                <!-- 🧍‍♂️ Tahap 1: Data Diri -->
+                <section id="tahap1" class="form-container-wrapper my-5 fade-section show">
+                    <div class="form-container">
+                        <h3 class="text-center mb-3">Form Pembelian</h3>
+                        <h4 class="text-center mb-4">Tahap 1: Pengisian Data Diri</h4>
+    
+                        <!-- 🧩 Data Diri -->
+                        <form id="formDataDiri" novalidate>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="namaDepan" class="form-label">
+                                        <i class="bi bi-person-fill me-2"></i>Nama Depan
+                                    </label>
+                                    <input type="text" class="form-control text-capitalize" id="namaDepan" required placeholder="Contoh: Budi">
+                                    <div class="invalid-feedback">Nama depan wajib diisi.</div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="namaBelakang" class="form-label">Nama Belakang</label>
+                                    <input type="text" class="form-control text-capitalize" id="namaBelakang" required placeholder="Contoh: Setiawan">
+                                    <div class="invalid-feedback">Nama belakang wajib diisi.</div>
+                                </div>
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="email" class="form-label">
+                                    <i class="bi bi-envelope-fill me-2"></i>Email
+                                </label>
+                                <input type="email" class="form-control" id="email" autocomplete="email" required placeholder="Contoh: name@email.com">
+                                <div class="invalid-feedback">Email tidak boleh kosong atau salah format.</div>
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="nomorHP" class="form-label">
+                                    <i class="bi bi-phone-fill me-2"></i>Nomor HP
+                                </label>
+                                <input type="tel" class="form-control" id="nomorHP" autocomplete="tel" inputmode="numeric" required placeholder="Contoh: 08xxxxxxxxxx" pattern="[0-9]{10,13}" title="Nomor HP harus 10–13 digit angka">
+                                <div class="invalid-feedback">Nomor HP wajib diisi dengan 10–13 digit angka.</div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="col-md-8 mb-3">
+                                    <label for="alamat" class="form-label">
+                                        <i class="bi bi-geo-alt-fill me-2"></i>Alamat Lengkap
+                                    </label>
+                                    <input type="text" class="form-control" id="alamat" required placeholder="Contoh: Jl. Merdeka No.25 Jakarta">
+                                    <div class="invalid-feedback">Alamat wajib diisi.</div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="kodePos" class="form-label">
+                                        <i class="bi bi-signpost-split-fill me-2"></i>Kode Pos
+                                    </label>
+                                    <input type="text" class="form-control" id="kodePos" required placeholder="Contoh: 55144">
+                                    <div class="invalid-feedback">Kode pos wajib diisi.</div>
+                                </div>
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="tanggal" class="form-label">
+                                    <i class="bi bi-calendar-check-fill me-2"></i>Tanggal Pembelian
+                                </label>
+                                <input type="date" class="form-control" id="tanggal" required>
+                                <div class="invalid-feedback">Tanggal pembelian wajib dipilih.</div>
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="callsign" class="form-label">Callsign ORARI</label>
+                                <input type="text" class="form-control" id="callsign" required placeholder="Contoh: YC2XCD">
+                                <div class="invalid-feedback">Callsign ORARI wajib diisi.</div>
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="catatan" class="form-label">Catatan (opsional)</label>
+                                <textarea class="form-control" id="catatan" rows="3" placeholder="Contoh: Kirim setelah tanggal 20 jika memungkinkan"></textarea>
+                            </div>
+    
+                            <div class="d-flex justify-content-between mt-3">
+                                <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                                <button type="button" class="btn btn-primary" onclick="lanjutTahap2()">Lanjutkan</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- 👕 Tahap 2: Produk -->
+                <section id="tahap2" class="form-container-wrapper my-5 d-none">
+                    <div class="form-container">
+                        <h4 class="text-center mb-4">Tahap 2: Pemilihan Produk</h4>
+    
+                        <div id="produk-wrapper"></div>
+                        <button class="btn btn-outline-success mb-3" onclick="tambahProduk()">Tambah Produk</button>
+    
+                        <div class="mb-3">
+                            <label>Total Harga:</label>
+                            <input type="text" title="totalHarga" id="totalHarga" class="form-control" readonly value="Rp0">
+                            <button class="btn btn-primary mt-2" onclick="hitungTotal()">Hitung Total Harga</button>
+                            <div id="loader" class="spinner-border text-primary d-none mt-2"></div>
+                        </div>
+    
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-secondary" onclick="kembaliTahap1()">Kembali</button>
+                            <button class="btn btn-primary" onclick="lanjutTahap3()">Lanjutkan</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 🧾 Tahap 3: Ringkasan -->
+                <section id="tahap3" class="form-container-wrapper my-5 d-none">
+                    <div class="form-container">
+                        <h4 class="text-center mb-4 judulTahap3">Tahap 3: Ringkasan Pesanan</h4>
+    
+                        <div id="judulRingkasan" class="text-center mb-4 d-print-block">
+                            <img src="img/logo/2XCD LOGO TS.png" alt="Logo" class="logo-struk">
+                            <h5 class="fw-bold mt-2">Struk Pesanan | 2XCD Design & Production</h5>
+                            <p>Tanggal: <span id="printTanggal"></span><br> Pemesan: <span id="printNama"></span></p>
+                        </div>
+    
+                        <div id="ringkasan-produk" class="mb-4"></div>
+                        <p class="mb-1">Subtotal seluruh produk:</p>
+                        <input type="text" id="totalHargaFinal" class="form-control mb-3" readonly placeholder="Rp0">
+                        
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <button class="btn btn-secondary btn-sm" onclick="kembaliTahap2()">
+                                ✏️ Edit Produk & Kembali
+                            </button>
+
+                            <button class="btn btn-outline-dark btn-sm" onclick="window.print()">
+                                🖨️ Cetak Struk
+                            </button>
+                        </div>
+
+                        <p class="fw-semibold mb-1 text-success">Harga yang harus dibayarkan:</p>
+                        <div id="displayTotalBayar" class="bg-light border rounded p-3 fs-5 text-success">Rp0</div>
+                        
+                        <p class="mb-1 mt-3">Pilih Metode Pembayaran:</p>
+                        <select class="form-select mb-3" title="metodeBayar" id="metodeBayar" onchange="tampilInstruksiBayar()">
+                            <option selected disabled value="">-- Pilih --</option>
+                            <option value="Gopay">Gopay/Qris</option>
+                            <option value="BRI">Transfer BRI</option>
+                            <option value="DANA">DANA</option>
+                        </select>
+                        <div id="boxInstruksi" class="p-3 border rounded bg-light mb-3 d-none"></div>
+                        
+                        <p class="mb-1">Upload File Bukti Pembayaran:</p>
+                        <input type="file" title="buktiPembayaran" class="form-control mb-3" id="buktiPembayaran">
+    
+                        <div class="d-grid">
+                            <button class="btn btn-success" onclick="testKirimKeBackend()">Kirim Pesanan & Bukti</button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <div id="loader-kirim" class="spinner-border text-success d-none"></div>
+                        </div>
+
+                        <div id="statusKirim" class="mt-3 text-center statusKirim"></div>
+                    </div>
+                </section>
+
+                <section id="tahapSelesai" class="form-container-wrapper my-5 d-none">
+                    <div class="form-container text-center">
+                        <img src="img/logo/2XCD LOGO TS.png" title="logo2xcdTerimakasih" class="mb-3 logo2xcdTerimakasih">
+                        <h4>✅ Terima kasih telah melakukan pemesanan!</h4>
+                        <p class="mb-3">Pesananmu sudah dicatat. Untuk konfirmasi atau pertanyaan, silakan hubungi admin lewat WhatsApp.</p>
+                        <a href="https://wa.me/628XXXXXXX?text=Halo%20admin,%20saya%20ingin%20konfirmasi%20pesanan%20ORARI" rel="noopener" target="_blank" class="btn btn-success">
+                        💬 Hubungi Admin via WhatsApp
+                        </a>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- 🔔 Notifikasi -->
+            <div id="notifikasiCustom" class="position-fixed top-0 end-0 p-3 d-none">
+                <div class="toast-body bg-warning text-dark shadow rounded">
+                ⚠️ Ada notifikasi di sini!
+                </div>
+            </div>
+
+            <!-- ⚫ Footer -->
+            <footer class="bg-dark text-light text-center py-4 mt-5">
+                <p class="mb-0">&copy; 2025 2XCD Design & Production. All rights reserved.</p>
+            </footer>
+        </div>
+
+        <!-- JS Modular -->
+        <script src="app-modular4.js"></script>
+    </body>
+</html>

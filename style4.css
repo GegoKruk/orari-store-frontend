@@ -1,0 +1,276 @@
+/* 🌍 Reset & Layout Global */
+body {
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  color: #333;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* 🔷 Header Navbar */
+.navbar-gradient {
+  background: linear-gradient(to right, rgba(85, 92, 98, 0.9), rgba(52, 58, 64, 0.1));
+  color: white;
+  padding: 1rem;
+}
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* 🧾 Form Container */
+.form-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 720px;
+  margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.form-container-wrapper {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* 📄 Poster */
+#posterImage.poster-fluid {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.poster-fluid {
+  animation: fadeInPoster 1s ease-in-out;
+}
+
+@keyframes fadeInPoster {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* 🎨 Preview Warna */
+.preview-warna {
+  margin-top: 20px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
+
+/* 🖼️ Preview Gambar */
+.preview-gambar img {
+  max-width: 140px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 🧾 Ringkasan Struk */
+.logo-struk {
+  max-height: 60px;
+  margin-bottom: 6px;
+}
+.statusKirim {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* 🔁 Animasi Section */
+.fade-section {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.fade-section.show {
+  opacity: 1;
+}
+
+/* 🧩 Produk Card */
+.card-produk-anim {
+  animation: fadeInUp 0.3s ease-out;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.card.border-danger {
+  border: 2px solid crimson !important;
+  background-color: #fff4f4 !important;
+}
+
+/* 🔄 Loader Spinner */
+#loader {
+  width: 30px;
+  height: 30px;
+}
+
+/* 🔔 Toast Notifikasi */
+#notifikasiCustom {
+  transition: opacity 0.5s ease;
+  z-index: 1055;
+}
+#notifikasiCustom.d-none {
+  opacity: 0;
+}
+#notifikasiCustom:not(.d-none) {
+  opacity: 1;
+}
+.toast-body {
+  font-size: 0.95rem;
+}
+
+/* 🖨️ Cetak Struk Ringkasan Pembelian */
+@media print {
+  body {
+    font-size: 11pt;
+    line-height: 1.5;
+    margin: 0;
+    padding: 1cm;
+    transform: scale(0.85);
+    transform-origin: top center;
+    color: #000;
+    background: #fff;
+  }
+
+  /* ✅ Tampilkan hanya tahap 3 (struk) */
+  #tahap3 {
+    display: block !important;
+    zoom: 0.85;
+    padding: 0;
+  }
+
+  /* ❌ Sembunyikan bagian lain */
+  #tahap1,
+  #tahap2,
+  #posterImage,
+  .judulTahap3,
+  nav,
+  footer,
+  button,
+  .btn,
+  .navbar,
+  #notifikasiCustom,
+  #metodeBayar,
+  #boxInstruksi,
+  #buktiPembayaran,
+  #statusKirim {
+    display: none !important;
+  }
+
+  /* 🎯 Container Ringkasan */
+  .form-container {
+    max-width: 700px;
+    margin: auto;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  /* 🧾 Logo & Judul Cetak */
+  .logo-struk {
+    max-height: 50px;
+    margin-bottom: 4px;
+  }
+
+  /* 🧩 Kartu Ringkasan */
+  .card {
+    page-break-inside: avoid;
+    border: 1px solid #aaa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: none;
+  }
+
+  /* 🖼️ Gambar Preview */
+  .card img {
+    max-width: 100px;
+  }
+
+  /* 🧾 Total dan Subtotal Harga */
+  #totalHargaFinal,
+  #displayTotalBayar {
+    font-size: 10pt !important;
+    border: none !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 0.5rem 0;
+  }
+}
+
+
+/* ⚫ Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+/* 📱 Responsif */
+@media (max-width: 576px) {
+  .form-container-wrapper {
+      padding-left: 18px !important;
+      padding-right: 18px !important;
+    }
+
+  .form-container {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+  .logo { width: 32px; height: 32px; }
+  .poster-fluid { max-width: 100%; }
+}
+
+/* 🧠 Input Focus & Icon Styling */
+.form-label i {
+  color: #666;
+  font-size: 1.1rem;
+  vertical-align: middle;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.15rem rgba(0,123,255,.25);
+}
+
+/* 🚨 Invalid Input Feedback */
+.was-validated .form-control:invalid {
+  border-color: crimson;
+}
+
+.invalid-feedback {
+  color: crimson;
+  font-size: 0.875rem;
+  margin-top: 4px;
+}
+
+/* 🔠 Autocapitalization */
+.text-capitalize {
+  text-transform: capitalize;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.card.removed {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.3s ease;
+}
+
+.logo2xcdTerimakasih{
+  max-height: 60px
+}
